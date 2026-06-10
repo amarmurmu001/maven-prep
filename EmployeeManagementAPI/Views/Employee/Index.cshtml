@@ -1,0 +1,40 @@
+@model IEnumerable<EmployeeManagementAPI.Models.Employee>
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h2>Employees</h2>
+<p>
+    <a href="/Employee/Create" class="btn btn-success">Add New Employee</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Name</td>
+                <td>@emp.Department</td>
+                <td>@emp.Email</td>
+                <td>@emp.Salary.ToString("C")</td>
+                <td>@emp.JoinedDate.ToString("MMM dd, yyyy")</td>
+                <td>
+                    <a href="/Employee/Edit/@emp.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@emp.Id" method="post" style="display:inline" onsubmit="return confirm('Are you sure?')">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
