@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src\Domain\LeaveManagementSystem.Domain.csproj" />
+  <Project Path="src\Application\LeaveManagementSystem.Application.csproj" />
+  <Project Path="src\Infrastructure\LeaveManagementSystem.Infrastructure.csproj" />
+  <Project Path="src\API\LeaveManagementSystem.API.csproj" />
+  <Project Path="tests\Tests\LeaveManagementSystem.Tests.csproj" />
+</Solution>
